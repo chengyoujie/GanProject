@@ -1,0 +1,6 @@
+<View width="280" height="322" sceneColor="0x999999" layers="1,1,0,0,第 1 层">
+  <List layers="1,1,0,0,第 1 层" layer="1" x="0" y="20" repeatY="9" vScrollBarSkin="png.guidecomp.vscroll" width="276" height="301" var="listTile">
+    <UIView source="mapreversal/tileListItem.xml" x="0" y="0" layer="1" runtime="com.cyj.app.view.tile.imglist.TileListItem" name="render"/>
+  </List>
+  <Label text="图块列表" styleSkin="png.comp.label" layer="1" color="0xffcc33" width="283" height="18" align="center" x="-4" y="-1"/>
+</View>

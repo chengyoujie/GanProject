@@ -1,0 +1,25 @@
+{
+	"initial": [
+		"libs/modules/egret/egret.js",
+		"libs/modules/egret/egret.web.js",
+		"libs/modules/game/game.js",
+		"libs/modules/res/res.js",
+		"libs/modules/tween/tween.js",
+		"libs/modules/socket/socket.js",
+		"extlibs/protobuf/protobuf.js"
+	],
+	"game": [
+		"bin-debug/cyj/Animation.js",
+		"bin-debug/cyj/net/INetHandler.js",
+		"bin-debug/cyj/ClipAnimation.js",
+		"bin-debug/cyj/IRender.js",
+		"bin-debug/cyj/LightMask.js",
+		"bin-debug/cyj/net/GameSocket.js",
+		"bin-debug/Main.js",
+		"bin-debug/game/GameApp.js",
+		"bin-debug/game/net/NetCMD.js",
+		"bin-debug/game/net/PBD.js",
+		"bin-debug/game/net/ProtobufNetHandler.js",
+		"bin-debug/game/utils/ListenerList.js"
+	]
+}

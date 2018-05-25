@@ -1,0 +1,9 @@
+syntax="proto3";
+option java_package = "net.protobuf.msg"; 
+option java_outer_classname = "PB_Move_MSG";
+
+message Move 
+{ 
+	required int32 x = 1; 
+	required int32 y = 2; 
+}

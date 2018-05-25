@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message Person {
+    int32 id = 1;
+    string name = 2;
+
+    repeated Phone phone = 4;
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    message Phone {
+        string number = 1;
+        PhoneType type = 2;
+    }
+}

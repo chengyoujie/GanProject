@@ -1,0 +1,20 @@
+//1
+message Person{
+	required string name=1;
+	required string address=2;
+	required int32	id=3;
+	//optional Point top=3;
+}
+
+//2
+message move{
+	required int32 x=1;
+	required int32 y=2;
+}
+
+//Point test
+message Point{
+	required int32 x=1;
+	required int32 y=2;
+	
+}

@@ -1,0 +1,15 @@
+{
+	"groups": [
+		{
+			"keys": "msg.proto",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "msg.proto",
+			"type": "text",
+			"url": "proto/msg.proto"
+		}
+	]
+}

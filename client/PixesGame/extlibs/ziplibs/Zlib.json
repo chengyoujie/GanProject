@@ -1,0 +1,9 @@
+{  
+    "name": "Zlib",             
+    "dependence": [],          
+    "source":"./Zlib",
+    "file_list": [             
+        "zlib.min.js",
+		"Zlib.d.ts"
+    ] 
+}    

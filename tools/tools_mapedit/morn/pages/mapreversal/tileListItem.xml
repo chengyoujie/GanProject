@@ -1,0 +1,8 @@
+<View sceneColor="0x999999" layers="2,1,0,1,第 2 层;1,1,0,0,第 1 层" width="252" height="30">
+  <Image skin="png.guidecomp.内框_1" layer="1" width="252" height="30" sizeGrid="5,5,5,5,1" x="0" y="0"/>
+  <Label text="图片名称" styleSkin="png.comp.label" x="9" y="6" layer="1" color="0x99ff00" width="110" height="18" align="left" var="txtTileName"/>
+  <Label text="32x32" styleSkin="png.comp.label" x="126" y="6" layer="1" color="0x99ff00" width="67" height="18" align="left" var="txtTileInfo"/>
+  <Button skin="png.guidecomp.btn_小按钮_1" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" width="24" height="21" x="222" y="4" label="删" var="btnTileDele"/>
+  <Button skin="png.guidecomp.btn_小按钮_1" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" width="24" height="21" x="197" y="4" label="设" var="btnTileSetting"/>
+  <Clip skin="png.guidecomp.clip_格子选中" x="0" y="0" layer="2" width="252" height="30" sizeGrid="8,8,8,8,1" name="selectBox" mouseEnabled="false"/>
+</View>

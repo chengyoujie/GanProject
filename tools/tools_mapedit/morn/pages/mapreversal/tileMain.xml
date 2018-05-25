@@ -1,0 +1,23 @@
+<View width="1200" height="700" sceneColor="0xffffff" layers="3,1,2,0,第 3 层;2,1,2,0,第 2 层;1,1,2,0,第 1 层">
+  <Image skin="png.comp.blank" x="8" y="0" layer="1" width="1180" height="54"/>
+  <Image skin="png.comp.blank" x="8" y="60" layer="1" width="250" height="640"/>
+  <Image skin="png.comp.blank" x="261" y="60" layer="1" width="630" height="640"/>
+  <Image skin="png.comp.blank" x="894" y="60" layer="1" width="295" height="640"/>
+  <Panel layers="1,1,0,0,第 1 层" layer="1" x="7" y="467" width="251" height="232" var="panelLayerList">
+    <UIView source="mapreversal/tileLayerList.xml" layer="1" runtime="com.cyj.app.view.tile.layer.TileLayerList" var="viewTileLayerList"/>
+  </Panel>
+  <UIView source="mapreversal/tileLogic.xml" x="8" y="264" layer="1" var="viewTileLogic" runtime="com.cyj.app.view.tile.logic.TileLogic"/>
+  <UIView source="mapreversal/tileMiniMap.xml" x="8" y="61" layer="1" var="viewTileMiniMap"/>
+  <Label text="选择项目" styleSkin="png.comp.label" x="-84" y="83" layer="2" color="0x99ff00" width="71" height="18" align="center"/>
+  <Button skin="png.guidecomp.btn_小按钮_1" layer="2" labelColors="0xc79a84,0xe0a98d,0x93827a" var="btnBrush" labelStroke="0" width="61" height="46" x="84" y="5" label="画笔"/>
+  <Image skin="png.guidecomp.line" x="901" y="391" layer="2" width="285"/>
+  <Panel layers="1,1,0,0,第 1 层" layer="2" x="897" y="401" vScrollBarSkin="png.guidecomp.vscroll" hScrollBarSkin="png.guidecomp.hscroll" width="292" height="299" var="panelClip">
+    <UIView source="mapreversal/tileClip.xml" layer="1" runtime="com.cyj.app.view.tile.TileClip" var="viewTileClip"/>
+  </Panel>
+  <UIView source="mapreversal/tileImgList.xml" x="900" y="65" layer="2" var="viewImgList" runtime="com.cyj.app.view.tile.imglist.TileImgList"/>
+  <Button skin="png.guidecomp.btn_小按钮_1" layer="2" labelColors="0xc79a84,0xe0a98d,0x93827a" var="btnEraser" labelStroke="0" width="61" height="46" x="146" y="4" label="擦除"/>
+  <Button skin="png.guidecomp.btn_小按钮_1" layer="2" labelColors="0xc79a84,0xe0a98d,0x93827a" var="btnFill" labelStroke="0" width="61" height="46" x="212" y="6" label="填充"/>
+  <Panel layers="1,1,0,0,第 1 层" layer="3" x="263" y="60" width="627" height="640" vScrollBarSkin="png.guidecomp.vscroll" hScrollBarSkin="png.guidecomp.hscroll" var="panelTileMap">
+    <UIView source="mapreversal/tileMap.xml" layer="1" var="viewTileMap" runtime="com.cyj.app.view.tile.TileMap"/>
+  </Panel>
+</View>

@@ -1,0 +1,11 @@
+<toolsconfig 
+title="游戏编辑器@cyj"
+appName="游戏编辑器"
+
+version="1.0.3"
+
+
+logpath="$apppath/res/log/log.txt"
+versionconfig="file:////192.168.2.50/ftp/tool/remotdata/packres/version.ver"
+
+/>

@@ -1,0 +1,126 @@
+<textarea id="content">
+        //登陆Token
+        message Token{
+        string UserID = 1;    //登陆接口返回的IMUserID
+        string Token = 2;    //登陆接口返回的Token
+        string Device = 3;    //客户端设备号
+        int32  Version = 4;    //版本号，发布前与服务端约定值
+        string Appkey = 5;    //客户端Appkey
+        }
+       
+        //收到私信
+        message ReceivePrivateMessage{
+        string MsgID = 1;        //消息id
+        string SenderID = 2;    //发送者id
+        string ReceiverID = 3;    //接收者id
+        string Content  = 4;    //消息内容。客户端转换成业务相关的实体后，再做后续处理（客户端使用，服务器不做任何处理，原样下发）
+        bool Ack = 5;              //是否需要已读回执
+        int32 SendDateTime = 6;    //消息发送时间
+        int32 ContentType = 7;    //内容类型（客户端使用，服务器不做任何处理，原样下发）
+        }
+        //回执类型
+        enum ReceiptType{
+        Receive = 0;                      //已收回执（收到消息后立即发送给服务器的回执）
+        Read = 1;                        //已读回执（用户进入消息阅读界面后发送给服务器的回执）
+        }
+    </textarea>
+    <div id="result"></div>
+    <script>
+        function start() {
+           // document.getElementById("result").html("");
+            document.getElementById("result").append('root = new protobuf.Root().define("IMProtoEntity")<br>');
+
+
+            var reg = /("([^\\\"]*(\\.)?)*")|('([^\\\']*(\\.)?)*')|(\/{2,}.*?(\r|\n))|(\/\*(\n|.)*?\*\/)/g,// 过滤注释
+          str = document.getElementById('content').val(); // 欲处理的文本
+            // console.log(str.match(reg));// 打印出：匹配子串
+            var news = str.replace(reg, "");
+            // console.log(news); // 打印出：原文本
+            var reg1 = /[message|enum].*?{/mg;
+            var regobj = /{[^}{]*?}/g;//新地址
+            var names = news.match(reg1);
+            var protos = news.match(regobj);
+            // console.log(names, protos);
+            var root = {};
+            for (var i = 0; i < names.length; i++) {
+                var rawname = names[i];
+                var rawObj = protos[i];
+                //if (~rawname.indexOf("message"))
+                if (!rawObj) continue;
+
+                var name = rawname.replace("{", '').replace("message ", '').replace("enum ", '');
+                var obj = { name: name };
+                if (~rawname.indexOf("enum")) {
+                    obj["type"] = "enum";
+                }
+
+                rawObj = rawObj.replace("{", '').replace("}", '');
+                var protolist = rawObj.split(';');
+                //  console.log("protolist", protolist);
+                var plist = [];
+                for (var j = 0; j < protolist.length; j++) {
+                    var p = trim(protolist[j]);
+                    if (p) {
+                        var args = [];
+                        var list = p.split(' ');
+                        //  console.log("list", list);
+                        list.forEach(function (n) {
+                            n && args.push(n);
+                        }),
+                        //  console.log("args", args);
+                        plist.push(args);
+                    }
+                }
+                obj.list = plist;
+                console.log(obj);
+                toProto(obj);
+            }
+
+        }
+
+        start();
+		
+		function trim(text)
+		{
+			return text.toString().replace(  /^\s+/, "" ).replace( /\s+$/, "" ); 
+		}
+
+        function toProto(obj) {
+            var root = "root";
+            var fun = "createProto";
+            var enumfun = "createEnum";
+
+            var str = root + '.add(';
+            var args;
+            if (!obj.type) {//message
+                args = '';
+                for (var i = 0; i < obj.list.length; i++) {
+                    var item = obj.list[i];
+
+                    //老协议2.0
+                    if (item[0] == "required" || item[0] == "optional") {
+                        item.shift();
+                    }
+                    //新协议3.0
+                    if (item[0] != "string") {
+                        args += '["' + item[1] + '","' + item[0] + '"]';
+                    } else {
+                        args += '["' + item[1] + '"]';
+                    }
+                    if (i < obj.list.length - 1) args += ",";
+                }
+            } else {//enum
+                args = '[';
+                for (var i = 0; i < obj.list.length; i++) {
+                    var item = obj.list[i];
+                    args += '"' + item[0] + '"';
+                    if (i < obj.list.length - 1) args += ",";
+                }
+                args += ']';
+            }
+
+            var all = str + (obj.type ? enumfun : fun) + '("' + obj.name + '",' + args + '));';
+            //  console.log(all);
+            document.getElementById("result").append(all + "<br>");
+        }
+    </script>

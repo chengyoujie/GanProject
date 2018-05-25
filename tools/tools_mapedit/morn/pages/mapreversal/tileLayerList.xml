@@ -1,0 +1,10 @@
+<View width="250" height="230" sceneColor="0x999999" layers="1,1,0,0,第 1 层">
+  <Button skin="png.guidecomp.btn_小按钮_1" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" width="24" height="21" x="9" y="205" label="+" var="btnAddLayer"/>
+  <Button skin="png.guidecomp.btn_小按钮_1" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" width="24" height="21" x="35" y="205" label="-" var="btnRemoveLayer"/>
+  <Button skin="png.guidecomp.btn_小按钮_1" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" width="24" height="24" x="63" y="205" label="锁" var="btnLockLayer"/>
+  <Button skin="png.guidecomp.btn_小按钮_1" layer="1" labelColors="0xc79a84,0xe0a98d,0x93827a" labelStroke="0" width="24" height="24" x="92" y="205" label="见" var="btnVisibleLayer"/>
+  <Label text="图层" styleSkin="png.comp.label" x="4" y="1" layer="1" color="0xffff00" width="243" height="18" align="center"/>
+  <List layers="1,1,0,0,第 1 层" layer="1" x="-1" y="21" repeatY="6" vScrollBarSkin="png.guidecomp.vscroll" width="247" height="180" var="listTileLayer">
+    <UIView source="mapreversal/tileLayerItem.xml" layer="1" name="render" runtime="com.cyj.app.view.tile.layer.TileLayerItem"/>
+  </List>
+</View>

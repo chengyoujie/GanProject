@@ -1,0 +1,21 @@
+﻿<project
+name="测试001"
+itemw="32"
+itemh="32"
+numx ="12"
+numy = "35"
+logicw="64"
+logich="64"
+>
+
+<tileLogic name="行走" color="0x00FF00|0xFF0000" curUseValue="false"  valuetype="0"/>
+<tileLogic name="隐藏" color="0xFFFF00|0x0000FF" curUseValue="true" valuetype="0"/>
+
+
+<tileLayer name="底图1" datastr="" type="0"/>
+<tileLayer name="底图2" datastr="" type="0"/>
+<tileLayer name="逻辑1" datastr="" type="1"/>
+
+
+
+</project>
